@@ -1,5 +1,5 @@
-import { useOpenFullNodeConnectionMutation } from '@chia-network/api-react';
-import { Button, ButtonLoading, DialogActions, Flex, Form, TextField, useShowError } from '@chia-network/core';
+import { useOpenFullNodeConnectionMutation } from '@cryptomines/api-react';
+import { Button, ButtonLoading, DialogActions, Flex, Form, TextField, useShowError } from '@cryptomines/core';
 import { Trans, t } from '@lingui/macro';
 import { Alert, Dialog, DialogTitle, DialogContent } from '@mui/material';
 import React from 'react';

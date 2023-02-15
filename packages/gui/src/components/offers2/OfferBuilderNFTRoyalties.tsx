@@ -1,5 +1,5 @@
-import type { NFTInfo } from '@chia-network/api';
-import { useGetCatListQuery } from '@chia-network/api-react';
+import type { NFTInfo } from '@cryptomines/api';
+import { useGetCatListQuery } from '@cryptomines/api-react';
 import {
   CopyToClipboard,
   Flex,
@@ -13,7 +13,7 @@ import {
   mojoToChiaLocaleString,
   mojoToCAT,
   mojoToCATLocaleString,
-} from '@chia-network/core';
+} from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
 import React, { useMemo } from 'react';
@@ -52,7 +52,7 @@ export default function OfferBuilderNFTRoyalties(props: OfferBuilderNFTRoyalties
         const { address, amount, asset } = royalty;
         const assetLowerCase = asset.toLowerCase();
 
-        if (assetLowerCase === 'xch' || assetLowerCase === currencyCode.toUpperCase()) {
+        if (assetLowerCase === 'kop' || assetLowerCase === currencyCode.toUpperCase()) {
           return {
             address,
             amount: mojoToChia(amount),

@@ -1,5 +1,5 @@
-import type { KeyData } from '@chia-network/api';
-import { useGetLoggedInFingerprintQuery } from '@chia-network/api-react';
+import type { KeyData } from '@cryptomines/api';
+import { useGetLoggedInFingerprintQuery } from '@cryptomines/api-react';
 import { Trans } from '@lingui/macro';
 import { Delete as DeleteIcon, Visibility as VisibilityIcon, Edit as EditIcon } from '@mui/icons-material';
 import { Box, Typography, ListItemIcon, Chip } from '@mui/material';

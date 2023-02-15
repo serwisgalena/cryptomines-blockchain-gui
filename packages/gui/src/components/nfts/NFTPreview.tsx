@@ -1,5 +1,5 @@
-import { type NFTInfo } from '@chia-network/api';
-import { IconMessage, Loading, Flex, SandboxedIframe, Tooltip, usePersistState, useDarkMode } from '@chia-network/core';
+import { type NFTInfo } from '@cryptomines/api';
+import { IconMessage, Loading, Flex, SandboxedIframe, Tooltip, usePersistState, useDarkMode } from '@cryptomines/core';
 import { t, Trans } from '@lingui/macro';
 import { NotInterested, Error as ErrorIcon } from '@mui/icons-material';
 import CloseSvg from '@mui/icons-material/Close';

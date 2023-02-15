@@ -1,6 +1,6 @@
-import { WalletType } from '@chia-network/api';
-import { useGetWalletsQuery, useCreateOfferForIdsMutation, usePrefs } from '@chia-network/api-react';
-import { Flex, ButtonLoading, useOpenDialog, Loading } from '@chia-network/core';
+import { WalletType } from '@cryptomines/api';
+import { useGetWalletsQuery, useCreateOfferForIdsMutation, usePrefs } from '@cryptomines/api-react';
+import { Flex, ButtonLoading, useOpenDialog, Loading } from '@cryptomines/core';
 import { t, Trans } from '@lingui/macro';
 import { Grid } from '@mui/material';
 import React, { useRef, useMemo } from 'react';
@@ -14,7 +14,7 @@ import OfferBuilder, { emptyDefaultValues } from './OfferBuilder';
 import OfferNavigationHeader from './OfferNavigationHeader';
 
 type CreateDefaultValuesParams = {
-  walletType?: WalletType; // CAT or STANDARD_WALLET (XCH), indicates whether a token or CAT has a default entry
+  walletType?: WalletType; // CAT or STANDARD_WALLET (KOP), indicates whether a token or CAT has a default entry
   assetId?: string; // Asset ID of the CAT
   nftId?: string; // NFT to include in the offer by default
   nftIds?: string[]; // multiple NFT selection
@@ -32,7 +32,7 @@ export function createDefaultValues(params: CreateDefaultValuesParams): OfferBui
     offered: {
       ...emptyDefaultValues.offered,
       nfts,
-      xch: walletType === WalletType.STANDARD_WALLET ? [{ amount: '' }] : [],
+      kop: walletType === WalletType.STANDARD_WALLET ? [{ amount: '' }] : [],
       tokens: walletType === WalletType.CAT && assetId ? [{ assetId, amount: '' }] : [],
     },
     requested: {

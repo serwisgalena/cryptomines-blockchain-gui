@@ -1,4 +1,4 @@
-import { mojoToCAT, mojoToChia } from '@chia-network/core';
+import { mojoToCAT, mojoToChia } from '@cryptomines/core';
 import BigNumber from 'bignumber.js';
 
 import type OfferBuilderData from '../@types/OfferBuilderData';
@@ -8,10 +8,10 @@ import { launcherIdToNFTId } from './nfts';
 export default function offerToOfferBuilderData(offerSummary: OfferSummary): OfferBuilderData {
   const { fees, offered, requested, infos } = offerSummary;
 
-  const offeredXch: OfferBuilderData['offered']['xch'] = [];
+  const offeredXch: OfferBuilderData['offered']['kop'] = [];
   const offeredTokens: OfferBuilderData['offered']['tokens'] = [];
   const offeredNfts: OfferBuilderData['offered']['nfts'] = [];
-  const requestedXch: OfferBuilderData['requested']['xch'] = [];
+  const requestedXch: OfferBuilderData['requested']['kop'] = [];
   const requestedTokens: OfferBuilderData['requested']['tokens'] = [];
   const requestedNfts: OfferBuilderData['requested']['nfts'] = [];
 
@@ -30,7 +30,7 @@ export default function offerToOfferBuilderData(offerSummary: OfferSummary): Off
       offeredNfts.push({
         nftId: launcherIdToNFTId(info.launcherId),
       });
-    } else if (id === 'xch') {
+    } else if (id === 'kop') {
       offeredXch.push({
         amount: mojoToChia(amount).toFixed(),
       });
@@ -50,7 +50,7 @@ export default function offerToOfferBuilderData(offerSummary: OfferSummary): Off
       requestedNfts.push({
         nftId: launcherIdToNFTId(info.launcherId),
       });
-    } else if (id === 'xch') {
+    } else if (id === 'kop') {
       requestedXch.push({
         amount: mojoToChia(amount).toFixed(),
       });
@@ -59,13 +59,13 @@ export default function offerToOfferBuilderData(offerSummary: OfferSummary): Off
 
   return {
     offered: {
-      xch: offeredXch,
+      kop: offeredXch,
       tokens: offeredTokens,
       nfts: offeredNfts,
       fee: [],
     },
     requested: {
-      xch: requestedXch,
+      kop: requestedXch,
       tokens: requestedTokens,
       nfts: requestedNfts,
       fee: [

@@ -1,4 +1,4 @@
-import { type NFTInfo } from '@chia-network/api';
+import { type NFTInfo } from '@cryptomines/api';
 import { Trans } from '@lingui/macro';
 import React from 'react';
 

@@ -1,5 +1,5 @@
-import { Button, CardHero, Link, useOpenDialog } from '@chia-network/core';
-import { Farming } from '@chia-network/icons';
+import { Button, CardHero, Link, useOpenDialog } from '@cryptomines/core';
+import { Farming } from '@cryptomines/icons';
 import { Trans } from '@lingui/macro';
 import { Divider, Grid, Typography } from '@mui/material';
 import React from 'react';

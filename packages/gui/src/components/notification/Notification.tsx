@@ -1,5 +1,5 @@
-import { Flex } from '@chia-network/core';
-import { Offers as OffersIcon } from '@chia-network/icons';
+import { Flex } from '@cryptomines/core';
+import { Offers as OffersIcon } from '@cryptomines/icons';
 import { Trans } from '@lingui/macro';
 import { MenuItem, Typography } from '@mui/material';
 import React from 'react';

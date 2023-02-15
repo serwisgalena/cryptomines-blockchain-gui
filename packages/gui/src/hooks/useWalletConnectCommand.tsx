@@ -3,8 +3,8 @@ import api, {
   useGetLoggedInFingerprintQuery,
   useLogInAndSkipImportMutation,
   useGetKeysQuery,
-} from '@chia-network/api-react';
-import { useOpenDialog, ConfirmDialog, Flex } from '@chia-network/core';
+} from '@cryptomines/api-react';
+import { useOpenDialog, ConfirmDialog, Flex } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import { Divider, Typography } from '@mui/material';
 import debug from 'debug';

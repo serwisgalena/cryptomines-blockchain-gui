@@ -16,7 +16,7 @@ import fs from 'fs';
 import path from 'path';
 import url from 'url';
 
-import { NFTInfo } from '@chia-network/api';
+import { NFTInfo } from '@cryptomines/api';
 import { initialize, enable } from '@electron/remote/main';
 import axios from 'axios';
 import chokidar from 'chokidar';
@@ -30,7 +30,7 @@ import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 // handle setupevents as quickly as possible
 import '../config/env';
 import packageJson from '../../package.json';
-import AppIcon from '../assets/img/chia64x64.png';
+import AppIcon from '../assets/img/cryptomines64x64.png';
 import About from '../components/about/About';
 import { i18n } from '../config/locales';
 import chiaEnvironment from '../util/chiaEnvironment';
@@ -85,7 +85,7 @@ function watchCacheFolder(folder: string) {
 
 let cacheLimitSize: number = 1024;
 
-// Set the userData directory to its location within CHIA_ROOT/gui
+// Set the userData directory to its location within CRYPTOMINES_ROOT/gui
 setUserDataDir();
 
 function renderAbout(): string {
@@ -1012,27 +1012,9 @@ function getMenuTemplate() {
       role: 'help',
       submenu: [
         {
-          label: i18n._(/* i18n */ { id: 'Chia Blockchain Wiki' }),
-          click: () => {
-            openExternal('https://github.com/Chia-Network/chia-blockchain/wiki');
-          },
-        },
-        {
-          label: i18n._(/* i18n */ { id: 'Frequently Asked Questions' }),
-          click: () => {
-            openExternal('https://github.com/Chia-Network/chia-blockchain/wiki/FAQ');
-          },
-        },
-        {
           label: i18n._(/* i18n */ { id: 'Release Notes' }),
           click: () => {
-            openExternal('https://github.com/Chia-Network/chia-blockchain/releases');
-          },
-        },
-        {
-          label: i18n._(/* i18n */ { id: 'Contribute on GitHub' }),
-          click: () => {
-            openExternal('https://github.com/Chia-Network/chia-blockchain/blob/main/CONTRIBUTING.md');
+            openExternal('https://github.com/serwisgalena/cryptomines-blockchain/releases');
           },
         },
         {
@@ -1041,19 +1023,13 @@ function getMenuTemplate() {
         {
           label: i18n._(/* i18n */ { id: 'Report an Issue...' }),
           click: () => {
-            openExternal('https://github.com/Chia-Network/chia-blockchain/issues');
-          },
-        },
-        {
-          label: i18n._(/* i18n */ { id: 'Chat on KeyBase' }),
-          click: () => {
-            openExternal('https://keybase.io/team/chia_network.public');
+            openExternal('https://github.com/serwisgalena/cryptomines-blockchain/issues');
           },
         },
         {
           label: i18n._(/* i18n */ { id: 'Follow on Twitter' }),
           click: () => {
-            openExternal('https://twitter.com/chia_project');
+            openExternal('https://twitter.com/KopalnieKrypto');
           },
         },
       ],
@@ -1061,12 +1037,12 @@ function getMenuTemplate() {
   ];
 
   if (process.platform === 'darwin') {
-    // Chia Blockchain menu (Mac)
+    // Cryptomines Blockchain menu (Mac)
     template.unshift({
-      label: i18n._(/* i18n */ { id: 'Chia' }),
+      label: i18n._(/* i18n */ { id: 'Cryptomines' }),
       submenu: [
         {
-          label: i18n._(/* i18n */ { id: 'About Chia Blockchain' }),
+          label: i18n._(/* i18n */ { id: 'About Cryptomines Blockchain' }),
           click: () => {
             openAbout();
           },
@@ -1153,7 +1129,7 @@ function getMenuTemplate() {
         type: 'separator',
       },
       {
-        label: i18n._(/* i18n */ { id: 'About Chia Blockchain' }),
+        label: i18n._(/* i18n */ { id: 'About Cryptomines Blockchain' }),
         click() {
           openAbout();
         },

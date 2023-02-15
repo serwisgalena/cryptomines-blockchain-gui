@@ -1,5 +1,5 @@
-import { PlotterService } from '@chia-network/api';
-import type { Plot } from '@chia-network/api';
+import { PlotterService } from '@cryptomines/api';
+import type { Plot } from '@cryptomines/api';
 
 import api, { baseQuery } from '../api';
 import onCacheEntryAddedInvalidate from '../utils/onCacheEntryAddedInvalidate';

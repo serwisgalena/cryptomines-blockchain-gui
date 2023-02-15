@@ -1,6 +1,6 @@
-import { toBech32m } from '@chia-network/api';
-import { useGetNFTInfoQuery } from '@chia-network/api-react';
-import { CopyToClipboard, Flex, TextField, useCurrencyCode } from '@chia-network/core';
+import { toBech32m } from '@cryptomines/api';
+import { useGetNFTInfoQuery } from '@cryptomines/api-react';
+import { CopyToClipboard, Flex, TextField, useCurrencyCode } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import { Box, Grid, InputAdornment } from '@mui/material';
 import React, { useEffect } from 'react';

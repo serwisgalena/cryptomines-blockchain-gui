@@ -1,7 +1,7 @@
-import { WalletType } from '@chia-network/api';
-import { useGetCatListQuery, useGetWalletsQuery } from '@chia-network/api-react';
-import type { CATToken, Wallet } from '@chia-network/core';
-import { useCurrencyCode } from '@chia-network/core';
+import { WalletType } from '@cryptomines/api';
+import { useGetCatListQuery, useGetWalletsQuery } from '@cryptomines/api-react';
+import type { CATToken, Wallet } from '@cryptomines/core';
+import { useCurrencyCode } from '@cryptomines/core';
 import { useMemo, useRef, useCallback } from 'react';
 
 export type AssetIdMapEntry = {
@@ -35,7 +35,7 @@ export default function useAssetIdName() {
       let isVerified = false;
 
       if (walletType === WalletType.STANDARD_WALLET) {
-        assetId = 'xch';
+        assetId = 'kop';
         name = 'Chia';
         symbol = currencyCode;
         isVerified = true;
@@ -87,11 +87,11 @@ export default function useAssetIdName() {
       assetIdNameMapping.set(assetId, entry);
     });
 
-    // If using testnet, add a TXCH assetId entry
-    if (currencyCode === 'TXCH') {
-      const assetId = 'txch';
-      const name = 'Chia (Testnet)';
-      const symbol = 'TXCH';
+    // If using testnet, add a TKOP assetId entry
+    if (currencyCode === 'TKOP') {
+      const assetId = 'tkop';
+      const name = 'Cryptomines (Testnet)';
+      const symbol = 'TKOP';
       const displayName = symbol || name;
       const entry: AssetIdMapEntry = {
         walletId: 1,

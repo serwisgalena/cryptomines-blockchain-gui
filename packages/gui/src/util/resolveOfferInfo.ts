@@ -1,4 +1,4 @@
-import { OfferSummaryRecord } from '@chia-network/api';
+import { OfferSummaryRecord } from '@cryptomines/api';
 import { t } from '@lingui/macro';
 
 import OfferAsset from '../components/offers/OfferAsset';

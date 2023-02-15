@@ -1,4 +1,4 @@
-import { Loading } from '@chia-network/core';
+import { Loading } from '@cryptomines/core';
 import React from 'react';
 
 import NotificationPreviewNFT from './NotificationPreviewNFT';

@@ -1,5 +1,5 @@
-import api, { store } from '@chia-network/api-react';
-import { getWalletSyncingStatus } from '@chia-network/wallets';
+import api, { store } from '@cryptomines/api-react';
+import { getWalletSyncingStatus } from '@cryptomines/wallets';
 
 import SyncingStatus from '../constants/SyncingStatus';
 

@@ -1,5 +1,5 @@
-import type { NFTInfo } from '@chia-network/api';
-import { Button, Flex, TooltipIcon } from '@chia-network/core';
+import type { NFTInfo } from '@cryptomines/api';
+import { Button, Flex, TooltipIcon } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import { Typography } from '@mui/material';
 import React from 'react';

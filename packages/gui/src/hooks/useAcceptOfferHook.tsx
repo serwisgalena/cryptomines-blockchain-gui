@@ -1,6 +1,6 @@
-import { OfferSummaryRecord } from '@chia-network/api';
-import { useTakeOfferMutation } from '@chia-network/api-react';
-import { AlertDialog, chiaToMojo, useOpenDialog, useShowError } from '@chia-network/core';
+import { OfferSummaryRecord } from '@cryptomines/api';
+import { useTakeOfferMutation } from '@cryptomines/api-react';
+import { AlertDialog, chiaToMojo, useOpenDialog, useShowError } from '@cryptomines/core';
 import { Trans, t } from '@lingui/macro';
 import BigNumber from 'bignumber.js';
 import React from 'react';

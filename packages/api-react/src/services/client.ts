@@ -1,4 +1,4 @@
-import { ConnectionState, ServiceName } from '@chia-network/api';
+import { ConnectionState, ServiceName } from '@cryptomines/api';
 
 import api, { baseQuery } from '../api';
 

@@ -1,5 +1,5 @@
-import { DropdownBase, useDarkMode } from '@chia-network/core';
-import { WalletConnect } from '@chia-network/icons';
+import { DropdownBase, useDarkMode } from '@cryptomines/core';
+import { WalletConnect } from '@cryptomines/icons';
 import { Box, Button } from '@mui/material';
 import React from 'react';
 

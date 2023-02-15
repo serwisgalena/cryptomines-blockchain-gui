@@ -1,7 +1,7 @@
-import type { Wallet, CATToken } from '@chia-network/api';
-import { WalletType } from '@chia-network/api';
-import { useGetCatListQuery, useGetWalletsQuery } from '@chia-network/api-react';
-import { Select, useCurrencyCode } from '@chia-network/core';
+import type { Wallet, CATToken } from '@cryptomines/api';
+import { WalletType } from '@cryptomines/api';
+import { useGetCatListQuery, useGetWalletsQuery } from '@cryptomines/api-react';
+import { Select, useCurrencyCode } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import { FormControl, InputLabel, MenuItem } from '@mui/material';
 import React, { useMemo } from 'react';
@@ -64,7 +64,7 @@ function buildAssetSelectorList(params: BuildAssetSelectorListParams): WalletOff
     }
 
     if (wallet.type === WalletType.STANDARD_WALLET) {
-      name = 'Chia';
+      name = 'Cryptomines';
       symbol = chiaCurrencyCode;
     } else if (wallet.type === WalletType.CAT) {
       name = wallet.name;

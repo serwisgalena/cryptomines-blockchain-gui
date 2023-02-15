@@ -1,6 +1,6 @@
-import { WalletType, type Wallet } from '@chia-network/api';
-import { useGetCatListQuery } from '@chia-network/api-react';
-import { useCurrencyCode } from '@chia-network/core';
+import { WalletType, type Wallet } from '@cryptomines/api';
+import { useGetCatListQuery } from '@cryptomines/api-react';
+import { useCurrencyCode } from '@cryptomines/core';
 import { Typography, type TypographyProps } from '@mui/material';
 import React from 'react';
 import styled from 'styled-components';

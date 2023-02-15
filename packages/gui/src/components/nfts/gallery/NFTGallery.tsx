@@ -1,6 +1,6 @@
-import type { NFTInfo } from '@chia-network/api';
-import { useLocalStorage } from '@chia-network/api-react';
-import { Flex, LayoutDashboardSub, Loading, /* useTrans, */ useDarkMode } from '@chia-network/core';
+import type { NFTInfo } from '@cryptomines/api';
+import { useLocalStorage } from '@cryptomines/api-react';
+import { Flex, LayoutDashboardSub, Loading, /* useTrans, */ useDarkMode } from '@cryptomines/core';
 import { t, Trans } from '@lingui/macro';
 import { FormControlLabel, RadioGroup, FormControl, Checkbox, Grid, Button, Fade } from '@mui/material';
 import React, { useEffect, useState, useCallback, useContext } from 'react';

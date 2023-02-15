@@ -1,5 +1,5 @@
-import { useGetHeightInfoQuery } from '@chia-network/api-react';
-import { FormatLargeNumber } from '@chia-network/core';
+import { useGetHeightInfoQuery } from '@cryptomines/api-react';
+import { FormatLargeNumber } from '@cryptomines/core';
 import React from 'react';
 
 export default function WalletStatusHeight() {

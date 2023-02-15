@@ -1,4 +1,4 @@
-import { StateIndicator, State, CardSimple } from '@chia-network/core';
+import { StateIndicator, State, CardSimple } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import React from 'react';
 

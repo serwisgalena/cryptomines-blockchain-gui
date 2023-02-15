@@ -1,4 +1,4 @@
-import { useGetNFTInfoQuery } from '@chia-network/api-react';
+import { useGetNFTInfoQuery } from '@cryptomines/api-react';
 import { useMemo } from 'react';
 
 import { didToDIDId } from '../util/dids';

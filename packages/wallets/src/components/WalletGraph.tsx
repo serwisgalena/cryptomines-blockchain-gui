@@ -1,7 +1,7 @@
-import { TransactionType, WalletType } from '@chia-network/api';
-import type { Transaction } from '@chia-network/api';
-import { useGetWalletBalanceQuery } from '@chia-network/api-react';
-import { mojoToChia, mojoToCAT, blockHeightToTimestamp } from '@chia-network/core';
+import { TransactionType, WalletType } from '@cryptomines/api';
+import type { Transaction } from '@cryptomines/api';
+import { useGetWalletBalanceQuery } from '@cryptomines/api-react';
+import { mojoToChia, mojoToCAT, blockHeightToTimestamp } from '@cryptomines/core';
 import BigNumber from 'bignumber.js';
 import { orderBy, groupBy, map } from 'lodash';
 import React, { ReactNode } from 'react';

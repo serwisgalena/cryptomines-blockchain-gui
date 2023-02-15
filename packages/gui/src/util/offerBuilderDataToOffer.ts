@@ -1,6 +1,6 @@
-import type { Wallet } from '@chia-network/api';
-import { WalletType } from '@chia-network/api';
-import { chiaToMojo, catToMojo } from '@chia-network/core';
+import type { Wallet } from '@cryptomines/api';
+import { WalletType } from '@cryptomines/api';
+import { chiaToMojo, catToMojo } from '@cryptomines/core';
 import { t } from '@lingui/macro';
 import BigNumber from 'bignumber.js';
 
@@ -22,8 +22,8 @@ export default async function offerBuilderDataToOffer(
   validateOnly?: boolean;
 }> {
   const {
-    offered: { xch: offeredXch = [], tokens: offeredTokens = [], nfts: offeredNfts = [], fee: [firstFee] = [] },
-    requested: { xch: requestedXch = [], tokens: requestedTokens = [], nfts: requestedNfts = [] },
+    offered: { kop: offeredXch = [], tokens: offeredTokens = [], nfts: offeredNfts = [], fee: [firstFee] = [] },
+    requested: { kop: requestedXch = [], tokens: requestedTokens = [], nfts: requestedNfts = [] },
   } = data;
 
   const usedNFTs: string[] = [];
@@ -40,10 +40,10 @@ export default async function offerBuilderDataToOffer(
   }
 
   await Promise.all(
-    offeredXch.map(async (xch) => {
-      const { amount } = xch;
+    offeredXch.map(async (kop) => {
+      const { amount } = kop;
       if (!amount || amount === '0') {
-        throw new Error(t`Please enter an XCH amount`);
+        throw new Error(t`Please enter an KOP amount`);
       }
 
       const wallet = wallets.find((w) => w.type === WalletType.STANDARD_WALLET);
@@ -56,7 +56,7 @@ export default async function offerBuilderDataToOffer(
 
       const hasEnoughBalance = await hasSpendableBalance(wallet.id, mojoAmount);
       if (!hasEnoughBalance) {
-        throw new Error(t`Amount exceeds XCH spendable balance`);
+        throw new Error(t`Amount exceeds KOP spendable balance`);
       }
     })
   );
@@ -105,10 +105,10 @@ export default async function offerBuilderDataToOffer(
   );
 
   // requested
-  requestedXch.forEach((xch) => {
-    const { amount } = xch;
+  requestedXch.forEach((kop) => {
+    const { amount } = kop;
     if (!amount || amount === '0') {
-      throw new Error(t`Please enter an XCH amount`);
+      throw new Error(t`Please enter an KOP amount`);
     }
 
     const wallet = wallets.find((w) => w.type === WalletType.STANDARD_WALLET);

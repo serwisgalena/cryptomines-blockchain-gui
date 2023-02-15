@@ -1,6 +1,6 @@
-import { ServiceName } from '@chia-network/api';
-import { useService } from '@chia-network/api-react';
-import { CardSimple } from '@chia-network/core';
+import { ServiceName } from '@cryptomines/api';
+import { useService } from '@cryptomines/api-react';
+import { CardSimple } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import React from 'react';
 

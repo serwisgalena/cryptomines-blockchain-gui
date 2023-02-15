@@ -1,6 +1,6 @@
-import type { Wallet } from '@chia-network/api';
-import { OfferSummaryRecord, OfferTradeRecord } from '@chia-network/api';
-import { useCheckOfferValidityMutation, useGetNFTInfoQuery, useGetNFTWallets } from '@chia-network/api-react';
+import type { Wallet } from '@cryptomines/api';
+import { OfferSummaryRecord, OfferTradeRecord } from '@cryptomines/api';
+import { useCheckOfferValidityMutation, useGetNFTInfoQuery, useGetNFTWallets } from '@cryptomines/api-react';
 import {
   Back,
   Button,
@@ -17,7 +17,7 @@ import {
   mojoToChia,
   useColorModeValue,
   useShowError,
-} from '@chia-network/core';
+} from '@cryptomines/core';
 import { Plural, Trans, t } from '@lingui/macro';
 import { Warning as WarningIcon } from '@mui/icons-material';
 import { Box, Divider, Grid, Typography } from '@mui/material';
@@ -89,7 +89,7 @@ function NFTOfferSummaryRow(props: NFTOfferSummaryRowProps) {
         const infoDict = summaryInfo[key];
         let assetType: OfferAsset | undefined;
 
-        if (['xch', 'txch'].includes(key.toLowerCase())) {
+        if (['kop', 'tkop'].includes(key.toLowerCase())) {
           assetType = OfferAsset.CHIA;
         } else if (infoDict?.type) {
           switch (infoDict.type.toLowerCase()) {

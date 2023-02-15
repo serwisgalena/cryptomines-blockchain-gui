@@ -1,5 +1,5 @@
-import { useCreateNewWalletMutation, useGetWalletBalanceQuery } from '@chia-network/api-react';
-import { ButtonLoading, chiaToMojo, EstimatedFee, Flex, Form, mojoToChiaLocaleString } from '@chia-network/core';
+import { useCreateNewWalletMutation, useGetWalletBalanceQuery } from '@cryptomines/api-react';
+import { ButtonLoading, chiaToMojo, EstimatedFee, Flex, Form, mojoToChiaLocaleString } from '@cryptomines/core';
 import { Trans, t } from '@lingui/macro';
 import { Card, Typography } from '@mui/material';
 import React from 'react';
@@ -44,7 +44,7 @@ export default function ProfileAdd() {
   const openExternal = useOpenExternal();
 
   function handleClick() {
-    openExternal('https://faucet.chia.net/');
+    openExternal('https://faucet.cryptominesblockchain.pl/');
   }
 
   async function handleSubmit(data: CreateProfileData) {
@@ -78,13 +78,13 @@ export default function ProfileAdd() {
         <StyledCard>
           <Flex flexDirection="column" gap={2.5} paddingBottom={1}>
             <Trans>
-              <strong>Need some XCH?</strong>
+              <strong>Need some KOP?</strong>
             </Trans>
           </Flex>
           <div style={{ cursor: 'pointer' }}>
             <Flex paddingBottom={5}>
               <Typography onClick={handleClick} sx={{ textDecoration: 'underline' }}>
-                Get Mojos from the Chia Faucet
+                Get Mojos from the Cryptomines Faucet
               </Typography>
             </Flex>
           </div>
@@ -95,7 +95,7 @@ export default function ProfileAdd() {
           </Flex>
           <Flex flexDirection="column" gap={2.5} paddingBottom={3}>
             <Typography variant="caption">
-              <Trans>Balance: {standardBalance} XCH</Trans>
+              <Trans>Balance: {standardBalance} KOP</Trans>
             </Typography>
           </Flex>
           <Flex flexDirection="column" gap={2.5} paddingBottom={1}>
@@ -111,7 +111,7 @@ export default function ProfileAdd() {
           </Flex>
           <Flex flexDirection="column" gap={2.5} paddingBottom={3}>
             <Typography variant="caption">
-              <Trans>Recommended: 0.000005 XCH</Trans>
+              <Trans>Recommended: 0.000005 KOP</Trans>
             </Typography>
           </Flex>
           <Flex justifyContent="flex-end">

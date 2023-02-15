@@ -1,5 +1,5 @@
-import { OfferTradeRecord } from '@chia-network/api';
-import { useCancelOfferMutation, useGetWalletsQuery } from '@chia-network/api-react';
+import { OfferTradeRecord } from '@cryptomines/api';
+import { useCancelOfferMutation, useGetWalletsQuery } from '@cryptomines/api-react';
 import {
   Button,
   ButtonLoading,
@@ -20,7 +20,7 @@ import {
   Tooltip,
   LayoutDashboardSub,
   MenuItem,
-} from '@chia-network/core';
+} from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import { Cancel, GetApp as Download, Info, Reply as Share, Visibility } from '@mui/icons-material';
 import {
@@ -183,7 +183,7 @@ function OfferList(props: OfferListProps) {
   const [saveOffer] = useSaveOfferFile();
   const { isLoading: isLoadingWallets } = useGetWalletsQuery();
   const { lookupByAssetId } = useAssetIdName();
-  const testnet = useCurrencyCode() === 'TXCH';
+  const testnet = useCurrencyCode() === 'TKOP';
   const openDialog = useOpenDialog();
   const { navigate } = useSerializedNavigationState();
   const {
@@ -438,7 +438,7 @@ export function OfferManager() {
                       </Typography>
                       <Typography variant="body1" color="textSecondary">
                         <Trans>
-                          Create a file that you can use to trade XCH, Chia Asset Tokens, or NFTs with no counter-party
+                          Create a file that you can use to trade KOP, Cryptomines Asset Tokens, or NFTs with no counter-party
                           risk.
                         </Trans>
                       </Typography>
@@ -477,7 +477,7 @@ export function CreateOffer() {
   const locationState = getLocationState(); // For cases where we know that the state has been serialized
   const openDialog = useOpenDialog();
   const [saveOffer] = useSaveOfferFile();
-  const testnet = useCurrencyCode() === 'TXCH';
+  const testnet = useCurrencyCode() === 'TKOP';
 
   async function handleOfferCreated(obj: { offerRecord: any; offerData: any }) {
     const { offerRecord, offerData, address } = obj;

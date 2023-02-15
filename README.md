@@ -1,8 +1,8 @@
-# chia-blockchain-gui
+# cryptomines-blockchain-gui
 
 ![Chia logo](https://www.chia.net/wp-content/uploads/2022/09/chia-logo.svg)
 
-![GitHub contributors](https://img.shields.io/github/contributors/Chia-Network/chia-blockchain-gui?logo=GitHub)
+![GitHub contributors](https://img.shields.io/github/contributors/Chia-Network/cryptomines-blockchain-gui?logo=GitHub)
 
 Welcome to the Chia GUI repo!
 
@@ -21,14 +21,14 @@ This monorepo consists of the following packages:
 
 ## Development
 
-1. This repo (chia-blockchain-gui) must be under chia-blockchain repo. Please follow the [installation steps for the chia-blockchain](https://github.com/Chia-Network/chia-blockchain/wiki/INSTALL#install-from-source). Make sure to install from source code (git clone...).
-2. Run the `sh install-gui.sh` as instructed in the previous step. This will clone the chia-blockchain-gui under chia-blockchain repo.
+1. This repo (cryptomines-blockchain-gui) must be under chia-blockchain repo. Please follow the [installation steps for the chia-blockchain](https://github.com/Chia-Network/chia-blockchain/wiki/INSTALL#install-from-source). Make sure to install from source code (git clone...).
+2. Run the `sh install-gui.sh` as instructed in the previous step. This will clone the cryptomines-blockchain-gui under chia-blockchain repo.
 3. Run `npm run dev:gui`
 
 **When developing, please:**
 
 - Only edit the code with the **Vscode editor**.
-- Always have **chia-blockchain-gui opened as a root folder in the Vscode** and not chia-blockchain, or chia-blockchain-gui/packages/... Failing to do so will result in incorrect auto linting and auto formatting which would not go trough the CI quality checks.
+- Always have **cryptomines-blockchain-gui opened as a root folder in the Vscode** and not chia-blockchain, or cryptomines-blockchain-gui/packages/... Failing to do so will result in incorrect auto linting and auto formatting which would not go trough the CI quality checks.
 - When you open the repo in the vscode, click on "**Install recommended plugins**" pop-up.
 - To develop in testnet, please follow [these steps](https://github.com/Chia-Network/chia-blockchain/wiki/How-to-connect-to-the-Testnet).
 - Please write tests for your code
@@ -41,7 +41,7 @@ This monorepo consists of the following packages:
 To install an NPM package, please navigate to the **root directory** of this repo.
 
 - To install `lodash` for **all** packages: `npx lerna add lodash`
-- To install `lodash` for **single** package: `npx lerna add lodash --scope=@chia-network/icons`
+- To install `lodash` for **single** package: `npx lerna add lodash --scope=@cryptomines/icons`
 - To install as a dev dependency, add `--dev`
 
 After adding a new NPM package, please **pin down the package version**. This is done to lower the possibility of supply chain attacks.
@@ -102,7 +102,7 @@ Do not edit files directly in the repo, but instead please head over to our [Cro
 
   1. In your command line, please go to the `chia-blockchain` directory (one level up)
   2. Run `. ./activate`
-  3. Run `cd chia-blockchain-gui`
+  3. Run `cd cryptomines-blockchain-gui`
   4. Run `npm run dev:gui` to start the app.
   5. If still does not work, please open you process manager and kill all Chia / Python related processes.
 

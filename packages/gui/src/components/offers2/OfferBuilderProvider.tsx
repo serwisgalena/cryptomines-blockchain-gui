@@ -1,11 +1,11 @@
-import { fungibleAssetFromAssetIdAndAmount, royaltyAssetFromNFTInfo } from '@chia-network/api';
-import type { CalculateRoyaltiesRequest, NFTInfo } from '@chia-network/api';
+import { fungibleAssetFromAssetIdAndAmount, royaltyAssetFromNFTInfo } from '@cryptomines/api';
+import type { CalculateRoyaltiesRequest, NFTInfo } from '@cryptomines/api';
 import {
   useCalculateRoyaltiesForNFTsQuery,
   useGetNFTsByNFTIDsQuery,
   useGetWalletsQuery,
-} from '@chia-network/api-react';
-import { catToMojo, chiaToMojo } from '@chia-network/core';
+} from '@cryptomines/api-react';
+import { catToMojo, chiaToMojo } from '@cryptomines/core';
 import { uniq } from 'lodash';
 import React, { ReactNode, useMemo } from 'react';
 import { useWatch } from 'react-hook-form';
@@ -34,11 +34,11 @@ export default function OfferBuilderProvider(props: OfferBuilderProviderProps) {
   })?.map(({ nftId }) => nftId);
 
   const requestedXCH = useWatch({
-    name: 'requested.xch',
+    name: 'requested.kop',
   });
 
   const offeredXCH = useWatch({
-    name: 'offered.xch',
+    name: 'offered.kop',
   });
 
   const requestedTokens = useWatch({
@@ -89,7 +89,7 @@ export default function OfferBuilderProvider(props: OfferBuilderProviderProps) {
   const requestedFungibleAssets = [
     ...(requestedXCH ?? [])
       .filter(({ amount }) => amount > 0)
-      .map(({ amount }) => fungibleAssetFromAssetIdAndAmount('xch', chiaToMojo(amount))),
+      .map(({ amount }) => fungibleAssetFromAssetIdAndAmount('kop', chiaToMojo(amount))),
     ...(requestedTokens ?? [])
       .filter(({ assetId, amount }) => assetId?.length > 0 && amount > 0)
       .map(({ amount, assetId }) => fungibleAssetFromAssetIdAndAmount(assetId, catToMojo(amount))),
@@ -98,7 +98,7 @@ export default function OfferBuilderProvider(props: OfferBuilderProviderProps) {
   const offeredFungibleAssets = [
     ...(offeredXCH ?? [])
       .filter(({ amount }) => amount > 0)
-      .map(({ amount }) => fungibleAssetFromAssetIdAndAmount('xch', chiaToMojo(amount))),
+      .map(({ amount }) => fungibleAssetFromAssetIdAndAmount('kop', chiaToMojo(amount))),
     ...(offeredTokens ?? [])
       .filter(({ assetId, amount }) => assetId?.length > 0 && amount > 0)
       .map(({ amount, assetId }) => fungibleAssetFromAssetIdAndAmount(assetId, catToMojo(amount))),
