@@ -7,7 +7,7 @@ import {
   Form,
   TooltipIcon,
   chiaToMojo,
-} from '@chia-network/core';
+} from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import {
   Checkbox,

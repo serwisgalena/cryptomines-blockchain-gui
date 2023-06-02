@@ -1,5 +1,5 @@
-import type { NFTAttribute } from '@chia-network/api';
-import { Flex } from '@chia-network/core';
+import type { NFTAttribute } from '@cryptomines/api';
+import { Flex } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import { Grid, Typography, LinearProgress } from '@mui/material';
 import { styled } from '@mui/material/styles';

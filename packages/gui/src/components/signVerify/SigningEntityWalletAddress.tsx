@@ -1,5 +1,5 @@
-import { useGetCurrentAddressQuery } from '@chia-network/api-react';
-import { CopyToClipboard, Flex, Loading, TextField } from '@chia-network/core';
+import { useGetCurrentAddressQuery } from '@cryptomines/api-react';
+import { CopyToClipboard, Flex, Loading, TextField } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import { Box, Grid, InputAdornment } from '@mui/material';
 import React, { useEffect } from 'react';

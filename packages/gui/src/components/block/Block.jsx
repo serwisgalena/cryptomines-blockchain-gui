@@ -1,5 +1,5 @@
-import { toBech32m } from '@chia-network/api';
-import { useGetBlockQuery, useGetBlockRecordQuery } from '@chia-network/api-react';
+import { toBech32m } from '@cryptomines/api';
+import { useGetBlockQuery, useGetBlockRecordQuery } from '@cryptomines/api-react';
 import {
   Back,
   Button,
@@ -14,7 +14,7 @@ import {
   useCurrencyCode,
   mojoToChia,
   Suspender,
-} from '@chia-network/core';
+} from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import { Alert, Paper, TableRow, Table, TableBody, TableCell, TableContainer } from '@mui/material';
 import moment from 'moment';
@@ -247,7 +247,7 @@ export default function Block() {
       <Card
         title={
           <Back variant="h5">
-            <Trans>Block at height {blockRecord.height} in the Chia blockchain</Trans>
+            <Trans>Block at height {blockRecord.height} in the Cryptomines blockchain</Trans>
           </Back>
         }
         action={

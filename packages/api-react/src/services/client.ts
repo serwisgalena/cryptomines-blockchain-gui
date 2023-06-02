@@ -1,4 +1,4 @@
-import Client from '@chia-network/api';
+import Client from '@cryptomines/api';
 
 import api, { baseQuery } from '../api';
 import { query, mutation } from '../utils/reduxToolkitEndpointAbstractions';

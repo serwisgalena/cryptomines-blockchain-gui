@@ -1,6 +1,6 @@
-import { WalletType } from '@chia-network/api';
-import type { NFTInfo } from '@chia-network/api';
-import { useCreateOfferForIdsMutation, useGetWalletBalanceQuery } from '@chia-network/api-react';
+import { WalletType } from '@cryptomines/api';
+import type { NFTInfo } from '@cryptomines/api';
+import { useCreateOfferForIdsMutation, useGetWalletBalanceQuery } from '@cryptomines/api-react';
 import {
   Amount,
   AmountProps,
@@ -26,7 +26,7 @@ import {
   useLocale,
   useOpenDialog,
   useShowError,
-} from '@chia-network/core';
+} from '@cryptomines/core';
 import { Trans, t } from '@lingui/macro';
 import { Warning as WarningIcon } from '@mui/icons-material';
 import { Box, Divider, Grid, Tabs, Tab, Typography, useTheme } from '@mui/material';
@@ -48,7 +48,7 @@ import { calculateNFTRoyalties } from './utils';
 
 /* ========================================================================== */
 /*              Temporary home for the NFT-specific Offer Editor              */
-/*       An NFT offer consists of a single NFT being offered for XCH/CAT      */
+/*       An NFT offer consists of a single NFT being offered for KOP/CAT      */
 /* ========================================================================== */
 
 const StyledWarningIcon = styled(WarningIcon)`
@@ -85,7 +85,7 @@ function NFTOfferCreationFee(props: NFTOfferCreationFeeProps) {
             <TooltipIcon>
               <Trans>
                 Including a fee in the offer can help expedite the transaction when the offer is accepted. The
-                recommended minimum fee is 0.000005 XCH (5,000,000 mojos)
+                recommended minimum fee is 0.000005 KOP (5,000,000 mojos)
               </Trans>
             </TooltipIcon>
           </Box>
@@ -412,7 +412,7 @@ function NFTOfferConditionalsPanel(props: NFTOfferConditionalsPanelProps) {
                       makerFee > 0 && (
                         <div>
                           <FormatLargeNumber value={new BigNumber(makerFee ?? 0)} />
-                          {' XCH'}
+                          {' KOP'}
                         </div>
                       )}
                   </Typography>
@@ -444,7 +444,7 @@ function NFTOfferConditionalsPanel(props: NFTOfferConditionalsPanelProps) {
 
 /* ========================================================================== */
 /*                              NFT Offer Editor                              */
-/*           Currently only supports a single NFT <--> XCH/CAT offer          */
+/*           Currently only supports a single NFT <--> KOP/CAT offer          */
 /* ========================================================================== */
 
 export type NFTOfferEditorTokenWalletInfo = {
@@ -549,7 +549,7 @@ export default function NFTOfferEditor(props: NFTOfferEditorProps) {
       walletId: 1,
       walletType: WalletType.STANDARD_WALLET,
       symbol: currencyCode,
-      name: 'Chia',
+      name: 'Cryptomines',
       spendableBalance: new BigNumber(0),
     },
     tokenAmount: '',

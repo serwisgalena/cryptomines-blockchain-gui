@@ -2,7 +2,7 @@ import {
   useCreateNewWalletMutation,
   useGetCurrentAddressQuery,
   useGetWalletBalanceQuery,
-} from '@chia-network/api-react';
+} from '@cryptomines/api-react';
 import {
   ButtonLoading,
   EstimatedFee,
@@ -14,7 +14,7 @@ import {
   chiaToMojo,
   mojoToChiaLocaleString,
   useCurrencyCode,
-} from '@chia-network/core';
+} from '@cryptomines/core';
 import { Trans, t } from '@lingui/macro';
 import { Card, Typography } from '@mui/material';
 import React from 'react';
@@ -53,8 +53,8 @@ export default function ProfileAdd() {
     },
   });
 
-  const currencyCode = (useCurrencyCode() ?? 'XCH').toUpperCase();
-  const isTestnet = currencyCode === 'TXCH';
+  const currencyCode = (useCurrencyCode() ?? 'KOP').toUpperCase();
+  const isTestnet = currencyCode === 'TKOP';
   const { data: currentAddress } = useGetCurrentAddressQuery({
     walletId: 1,
   });
@@ -121,7 +121,7 @@ export default function ProfileAdd() {
                     <Trans>Need some {currencyCode}?</Trans>
                   </Typography>
                   <Link onClick={handleClick}>
-                    <Trans>Get Mojos from the Chia Faucet</Trans>
+                    <Trans>Get Mojos from the Cryptomines Faucet</Trans>
                   </Link>
                 </Flex>
               )}

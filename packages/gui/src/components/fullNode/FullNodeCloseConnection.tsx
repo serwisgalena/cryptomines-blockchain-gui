@@ -1,5 +1,5 @@
-import { useCloseFullNodeConnectionMutation } from '@chia-network/api-react';
-import { ConfirmDialog, useOpenDialog } from '@chia-network/core';
+import { useCloseFullNodeConnectionMutation } from '@cryptomines/api-react';
+import { ConfirmDialog, useOpenDialog } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import React from 'react';
 

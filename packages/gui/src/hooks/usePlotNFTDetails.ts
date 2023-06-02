@@ -1,5 +1,5 @@
-import type { PlotNFT, Plot } from '@chia-network/api';
-import { useIsWalletSynced } from '@chia-network/wallets';
+import type { PlotNFT, Plot } from '@cryptomines/api';
+import { useIsWalletSynced } from '@cryptomines/wallets';
 import { useMemo } from 'react';
 
 import PlotNFTState from '../constants/PlotNFTState';

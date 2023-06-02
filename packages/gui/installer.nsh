@@ -21,12 +21,12 @@ Var NextButton
 Page custom detectOldChiaVersion detectOldChiaVersionPageLeave
 Page custom finish finishLeave
 
-; Add a page offering to uninstall an older build installed into the chia-blockchain dir
+; Add a page offering to uninstall an older build installed into the cryptomines-blockchain dir
 Function detectOldChiaVersion
-  ; Check the registry for old chia-blockchain installer keys
-  ReadRegStr $ChiaSquirrelInstallLocation HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\chia-blockchain" "InstallLocation"
-  ReadRegStr $ChiaSquirrelInstallVersion HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\chia-blockchain" "DisplayVersion"
-  ReadRegStr $ChiaSquirrelUninstaller HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\chia-blockchain" "QuietUninstallString"
+  ; Check the registry for old cryptomines-blockchain installer keys
+  ReadRegStr $ChiaSquirrelInstallLocation HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\cryptomines-blockchain" "InstallLocation"
+  ReadRegStr $ChiaSquirrelInstallVersion HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\cryptomines-blockchain" "DisplayVersion"
+  ReadRegStr $ChiaSquirrelUninstaller HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\cryptomines-blockchain" "QuietUninstallString"
 
   StrCpy $UninstallChiaSquirrelInstall ${BST_UNCHECKED} ; Initialize to unchecked so that a silent install skips uninstalling
 
@@ -52,12 +52,12 @@ Function detectOldChiaVersion
     Abort
   ${EndIf}
 
-  !insertmacro MUI_HEADER_TEXT "Uninstall Old Version" "Would you like to uninstall the old version of Chia Blockchain?"
+  !insertmacro MUI_HEADER_TEXT "Uninstall Old Version" "Would you like to uninstall the old version of Cryptomines Blockchain?"
 
-  ${NSD_CreateLabel} 0 35 100% 12u "Found Chia Blockchain $ChiaSquirrelInstallVersion installed in an old location:"
+  ${NSD_CreateLabel} 0 35 100% 12u "Found Cryptomines Blockchain $ChiaSquirrelInstallVersion installed in an old location:"
   ${NSD_CreateLabel} 12 57 100% 12u "$ChiaSquirrelInstallLocation"
 
-  ${NSD_CreateCheckBox} 12 81 100% 12u "Uninstall Chia Blockchain $ChiaSquirrelInstallVersion"
+  ${NSD_CreateCheckBox} 12 81 100% 12u "Uninstall Cryptomines Blockchain $ChiaSquirrelInstallVersion"
   Pop $CheckboxUninstall
   ${NSD_SetState} $CheckboxUninstall $UninstallChiaSquirrelInstall
   ${NSD_OnClick} $CheckboxUninstall SetUninstall
@@ -89,14 +89,14 @@ Function finish
     Abort
   ${EndIf}
 
-  ${NSD_CreateCheckbox} 0 40% 100% 10% "Launch Chia"
+  ${NSD_CreateCheckbox} 0 40% 100% 10% "Launch Cryptomines"
   Pop $CheckboxLaunchOnExit
   ${NSD_SetState} $CheckboxLaunchOnExit ${BST_CHECKED}
   ${NSD_OnClick} $CheckboxLaunchOnExit SetLaunchOnExit
   StrCpy $LaunchOnExit 1
   
   ${NSD_CreateLabel} 0 65% 100% 10% "Advanced Options:"
-  ${NSD_CreateCheckbox} 5% 75% 100% 10% "Add Chia Command Line executable to PATH"
+  ${NSD_CreateCheckbox} 5% 75% 100% 10% "Add Cryptomines Command Line executable to PATH"
   Pop $CheckboxAddToPath
   ${NSD_SetState} $CheckboxAddToPath ${BST_UNCHECKED}
   ${NSD_OnClick} $CheckboxAddToPath SetAddToPath
@@ -104,7 +104,7 @@ Function finish
   GetDlgItem $NextButton $HWNDPARENT 1 ; 1 = Next button
   GetDlgItem $BackButton $HWNDPARENT 3 ; 3 = Back button
 
-  ${NSD_CreateLabel} 0 35 100% 12u "Chia has been installed successfully!"
+  ${NSD_CreateLabel} 0 35 100% 12u "Cryptomines has been installed successfully!"
   EnableWindow $BackButton 0 ; Disable the Back button
   SendMessage $NextButton ${WM_SETTEXT} 0 "STR:Finish" ; Button title is "Close" by default. Update it here.
 

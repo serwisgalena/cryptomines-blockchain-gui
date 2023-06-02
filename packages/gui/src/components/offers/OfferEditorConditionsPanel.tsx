@@ -1,6 +1,6 @@
-import type { Wallet } from '@chia-network/api';
-import { WalletType } from '@chia-network/api';
-import { useGetWalletBalanceQuery, useGetWalletsQuery } from '@chia-network/api-react';
+import type { Wallet } from '@cryptomines/api';
+import { WalletType } from '@cryptomines/api';
+import { useGetWalletBalanceQuery, useGetWalletsQuery } from '@cryptomines/api-react';
 import {
   Amount,
   Fee,
@@ -11,7 +11,7 @@ import {
   mojoToCAT,
   mojoToCATLocaleString,
   useLocale,
-} from '@chia-network/core';
+} from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import { Add, Remove } from '@mui/icons-material';
 import { Box, Divider, IconButton, Typography } from '@mui/material';
@@ -391,7 +391,7 @@ function OfferEditorConditionsPanel(props: OfferEditorConditionsPanelProps) {
             <TooltipIcon>
               <Trans>
                 Including a fee in the offer can help expedite the transaction when the offer is accepted. The
-                recommended minimum fee is 0.000005 XCH (5,000,000 mojos)
+                recommended minimum fee is 0.000005 KOP (5,000,000 mojos)
               </Trans>
             </TooltipIcon>
           </Box>

@@ -1,4 +1,4 @@
-import { useGetVCListQuery } from '@chia-network/api-react';
+import { useGetVCListQuery } from '@cryptomines/api-react';
 import { Box } from '@mui/material';
 import { styled } from '@mui/styles';
 import React, { useCallback, useRef } from 'react';

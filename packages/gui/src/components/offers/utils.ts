@@ -1,6 +1,6 @@
-import { WalletType } from '@chia-network/api';
-import type { OfferSummaryAssetInfo, OfferSummaryRecord } from '@chia-network/api';
-import { mojoToCAT, mojoToChia, mojoToCATLocaleString, mojoToChiaLocaleString } from '@chia-network/core';
+import { WalletType } from '@cryptomines/api';
+import type { OfferSummaryAssetInfo, OfferSummaryRecord } from '@cryptomines/api';
+import { mojoToCAT, mojoToChia, mojoToCATLocaleString, mojoToChiaLocaleString } from '@cryptomines/core';
 import { t } from '@lingui/macro';
 import type { ChipProps } from '@mui/material';
 
@@ -40,7 +40,7 @@ export function summaryStringsForNFTOffer(
   builder: (filename: string, args: [assetInfo: AssetIdMapEntry | undefined, amount: string]) => string
 ): [makerString: string, takerString: string] {
   // const makerAssetType = offerAssetTypeForAssetId
-  // TODO: Remove 1:1 NFT <--> XCH assumption
+  // TODO: Remove 1:1 NFT <--> KOP assumption
   const makerEntry: [string, string] = Object.entries(summary.offered)[0] as [string, string];
   const takerEntry: [string, string] = Object.entries(summary.requested)[0] as [string, string];
   const makerAssetType = offerAssetTypeForAssetId(makerEntry[0], summary);
@@ -187,7 +187,7 @@ export function offerContainsAssetOfType(
 export function offerAssetTypeForAssetId(assetId: string, offerSummary: OfferSummaryRecord): OfferAsset | undefined {
   let assetType: OfferAsset | undefined;
 
-  if (['xch', 'txch'].includes(assetId)) {
+  if (['kop', 'tkop'].includes(assetId)) {
     assetType = OfferAsset.CHIA;
   } else {
     const { infos } = offerSummary;
@@ -223,7 +223,7 @@ export function offerAssetIdForAssetType(
   }
 
   if (assetType === OfferAsset.CHIA) {
-    return keys.includes('xch') ? 'xch' : undefined;
+    return keys.includes('kop') ? 'kop' : undefined;
   }
 
   const assetId = Object.keys(offerSummary.infos).find(

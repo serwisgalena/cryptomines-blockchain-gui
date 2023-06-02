@@ -1,4 +1,4 @@
-import { Loading } from '@chia-network/core';
+import { Loading } from '@cryptomines/core';
 import React, { useMemo } from 'react';
 
 import Notification from '../../@types/Notification';

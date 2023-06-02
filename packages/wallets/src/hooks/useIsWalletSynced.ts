@@ -1,4 +1,4 @@
-import { SyncingStatus } from '@chia-network/api';
+import { SyncingStatus } from '@cryptomines/api';
 
 import useWalletState from './useWalletState';
 

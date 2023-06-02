@@ -1,4 +1,4 @@
-import { type OfferSummaryRecord } from '@chia-network/api';
+import { type OfferSummaryRecord } from '@cryptomines/api';
 
 type Offer = {
   id: string;

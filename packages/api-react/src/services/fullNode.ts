@@ -1,4 +1,4 @@
-import { FullNode } from '@chia-network/api';
+import { FullNode } from '@cryptomines/api';
 
 // import MethodReturnType from '../@types/MethodReturnType'
 // import MethodFirstParameter from '../@types/MethodFirstParameter'

@@ -1,4 +1,4 @@
-import { OfferTradeRecord } from '@chia-network/api';
+import { OfferTradeRecord } from '@cryptomines/api';
 import {
   ButtonLoading,
   CopyToClipboard,
@@ -8,7 +8,7 @@ import {
   useOpenDialog,
   useShowError,
   useOpenExternal,
-} from '@chia-network/core';
+} from '@cryptomines/core';
 import { Trans, t } from '@lingui/macro';
 import {
   Button,
@@ -31,7 +31,7 @@ import { NFTOfferSummary } from './NFTOfferViewer';
 import OfferSummary from './OfferSummary';
 import { offerContainsAssetOfType } from './utils';
 
-const log = debug('chia-gui:offers');
+const log = debug('cryptomines-gui:offers');
 
 /* ========================================================================== */
 
@@ -81,7 +81,7 @@ type CommonShareServiceDialogProps = CommonDialogProps & {
 
 type OfferShareServiceDialogProps = CommonOfferProps & CommonShareServiceDialogProps;
 
-const testnetDummyHost = 'offers-api-sim.chia.net';
+const testnetDummyHost = 'offers-api-sim.cryptomines.pl';
 
 const OfferSharingProviders: {
   [key in OfferSharingService]: OfferSharingProvider;
@@ -194,7 +194,7 @@ async function postToMintGarden(offerData: string, testnet: boolean): Promise<st
 
 enum HashgreenErrorCodes {
   OFFERED_AMOUNT_TOO_SMALL = 40_020, // The offered amount is too small
-  MARKET_NOT_FOUND = 50_029, // Pairing doesn't exist e.g. XCH/RandoCoin
+  MARKET_NOT_FOUND = 50_029, // Pairing doesn't exist e.g. KOP/RandoCoin
   OFFER_FILE_EXISTS = 50_037, // Offer already shared
   COINS_ALREADY_COMMITTED = 50_041, // Coins in the offer are already committed in another offer
 }
@@ -282,7 +282,7 @@ async function postToSpacescan(offerData: string, testnet: boolean): Promise<{ v
     protocol: 'https:',
     hostname: 'api2.spacescan.io',
     port: 443,
-    path: `/api/offer/upload?coin=${testnet ? 'txch' : 'xch'}&version=1`,
+    path: `/api/offer/upload?coin=${testnet ? 'tkop' : 'kop'}&version=1`,
   };
   const requestHeaders = {
     'Content-Type': 'application/json',

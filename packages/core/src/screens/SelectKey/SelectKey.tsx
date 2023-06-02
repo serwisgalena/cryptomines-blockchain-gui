@@ -1,4 +1,4 @@
-import type { KeyData } from '@chia-network/api';
+import type { KeyData } from '@cryptomines/api';
 import {
   usePrefs,
   useGetKeyringStatusQuery,
@@ -7,8 +7,8 @@ import {
   useClearCache,
   useLogInMutation,
   type Serializable,
-} from '@chia-network/api-react';
-import { ChiaBlack, Coins } from '@chia-network/icons';
+} from '@cryptomines/api-react';
+import { ChiaBlack, Coins } from '@cryptomines/icons';
 import { Trans } from '@lingui/macro';
 import { Delete as DeleteIcon } from '@mui/icons-material';
 import { Alert, Typography, Container, ListItemIcon } from '@mui/material';
@@ -272,7 +272,7 @@ export default function SelectKey() {
                 color="textSecondary"
                 sx={{ fontWeight: 400, fontSize: '18px' }}
               >
-                <Trans>Create a new wallet key to get started with Chia.</Trans>
+                <Trans>Create a new wallet key to get started with Cryptomines.</Trans>
               </Typography>
               <Button
                 onClick={() => handleNavigationIfKeyringIsMutable('/wallet/add')}

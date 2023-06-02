@@ -1,9 +1,9 @@
-import { store, walletApi } from '@chia-network/api-react';
+import { store, walletApi } from '@cryptomines/api-react';
 import BigNumber from 'bignumber.js';
 
 import { prepareNFTOffer, prepareNFTOfferFromNFTId } from './prepareNFTOffer';
 
-jest.mock('@chia-network/api-react', () => ({
+jest.mock('@cryptomines/api-react', () => ({
   store: {
     dispatch: jest.fn(),
   },

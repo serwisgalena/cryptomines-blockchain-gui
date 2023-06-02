@@ -1,6 +1,6 @@
-import { WalletType } from '@chia-network/api';
-import { Flex, MenuItem } from '@chia-network/core';
-import { Offers as OffersIcon } from '@chia-network/icons';
+import { WalletType } from '@cryptomines/api';
+import { Flex, MenuItem } from '@cryptomines/core';
+import { Offers as OffersIcon } from '@cryptomines/icons';
 import { Trans } from '@lingui/macro';
 import { Box, Typography, ListItemIcon } from '@mui/material';
 import React, { useState } from 'react';

@@ -1,17 +1,17 @@
 {
-  "name": "@chia-network/gui",
-  "author": "Chia Network <hello@chia.net> (https://chia.net/)",
-  "description": "GUI for Chia Blockchain",
+  "name": "@cryptomines/gui",
+  "author": "Kopalnie Krypto <kontakt@kopalniekrypto.pl> (https://cryptominesblockchain.pl/)",
+  "description": "GUI for Cryptomines Blockchain",
   "license": "Apache-2.0",
-  "productName": "Chia Blockchain",
+  "productName": "Cryptomines Blockchain",
   "homepage": "./",
   "main": "build/electron/main.js",
   "engines": {
     "node": ">=16.15.0"
   },
   "build": {
-    "productName": "chia",
-    "appId": "net.chia.blockchain",
+    "productName": "cryptomines",
+    "appId": "net.cryptomines.blockchain",
     "asar": true,
     "asarUnpack": "**/daemon/**",
     "npmRebuild": false,
@@ -24,26 +24,26 @@
     ],
     "protocols": [
       {
-        "name": "Chia URL",
+        "name": "Cryptomines URL",
         "schemes": [
-          "chia"
+          "cryptomines"
         ]
       },
       {
-        "name": "Chia XCH Address",
+        "name": "Cryptomines KOP Address",
         "schemes": [
-          "xch"
+          "kop"
         ]
       }
     ],
     "win": {
       "target": "nsis",
-      "icon": "src/assets/img/chia.ico",
+      "icon": "src/assets/img/cryptomines.ico",
       "timeStampServer": "http://timestamp.comodoca.com",
-      "executableName": "Chia"
+      "executableName": "Cryptomines"
     },
     "nsis": {
-      "artifactName": "ChiaSetup-${env.CHIA_INSTALLER_VERSION}.exe",
+      "artifactName": "CryptominesSetup-${env.CRYPTOMINES_INSTALLER_VERSION}.exe",
       "oneClick": false,
       "deleteAppDataOnUninstall": true,
       "allowToChangeInstallationDirectory": true,
@@ -53,13 +53,13 @@
       "include": "installer.nsh"
     },
     "mac": {
-      "executableName": "Chia",
-      "artifactName": "${productName}-${env.CHIA_INSTALLER_VERSION}.${ext}",
+      "executableName": "Cryptomines",
+      "artifactName": "${productName}-${env.CRYPTOMINES_INSTALLER_VERSION}.${ext}",
       "category": "public.app-category.finance",
       "target": "dmg",
-      "icon": "src/assets/img/chia.icns",
+      "icon": "src/assets/img/cryptomines.icns",
       "entitlements": "entitlements.mac.plist",
-      "provisioningProfile": "chiablockchain.provisionprofile",
+      "provisioningProfile": "cryptominesblockchain.provisionprofile",
       "darkModeSupport": true,
       "hardenedRuntime": true,
       "gatekeeperAssess": false
@@ -86,8 +86,8 @@
       }
     },
     "linux": {
-      "artifactName": "${productName}-${env.CHIA_INSTALLER_VERSION}.${ext}",
-      "icon": "src/assets/img/chia.icns"
+      "artifactName": "${productName}-${env.CRYPTOMINES_INSTALLER_VERSION}.${ext}",
+      "icon": "src/assets/img/cryptomines.icns"
     },
     "deb": {
       "afterInstall": "../../../build_scripts/assets/deb/postinst.sh",
@@ -113,7 +113,7 @@
         "--rpm-rpmbuild-define=_enable_debug_package 0",
         "--rpm-rpmbuild-define=debug_package %{nil}",
         "--rpm-rpmbuild-define=__os_install_post /usr/lib/rpm/brp-compress %{nil}",
-        "--rpm-attr=4755,root,root:/opt/chia/chrome-sandbox"
+        "--rpm-attr=4755,root,root:/opt/cryptomines/chrome-sandbox"
       ]
     }
   },
@@ -144,11 +144,11 @@
     "test": "jest"
   },
   "dependencies": {
-    "@chia-network/api": "1.0.0",
-    "@chia-network/api-react": "1.0.0",
-    "@chia-network/core": "1.0.0",
-    "@chia-network/icons": "1.0.0",
-    "@chia-network/wallets": "1.0.0",
+    "@cryptomines/api": "1.0.0",
+    "@cryptomines/api-react": "1.0.0",
+    "@cryptomines/core": "1.0.0",
+    "@cryptomines/icons": "1.0.0",
+    "@cryptomines/wallets": "1.0.0",
     "@electron/remote": "2.0.1",
     "@lingui/core": "3.13.0",
     "@lingui/macro": "3.13.0",

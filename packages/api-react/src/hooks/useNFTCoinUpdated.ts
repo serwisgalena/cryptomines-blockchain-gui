@@ -1,4 +1,4 @@
-import { WalletService } from '@chia-network/api';
+import { WalletService } from '@cryptomines/api';
 
 import useSubscribeToEvent from './useSubscribeToEvent';
 

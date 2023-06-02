@@ -1,6 +1,6 @@
-import { WalletType } from '@chia-network/api';
-import { useGetWalletsQuery } from '@chia-network/api-react';
-import { Flex, CardListItem } from '@chia-network/core';
+import { WalletType } from '@cryptomines/api';
+import { useGetWalletsQuery } from '@cryptomines/api-react';
+import { Flex, CardListItem } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import { Box, Typography, Theme } from '@mui/material';
 import { orderBy } from 'lodash';

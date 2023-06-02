@@ -1,5 +1,5 @@
-import { useGetKeysQuery, useGetLoggedInFingerprintQuery } from '@chia-network/api-react';
-import { LayoutLoading } from '@chia-network/core';
+import { useGetKeysQuery, useGetLoggedInFingerprintQuery } from '@cryptomines/api-react';
+import { LayoutLoading } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import React, { useCallback, useEffect, type ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';

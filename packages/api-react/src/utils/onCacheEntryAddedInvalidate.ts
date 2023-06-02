@@ -1,4 +1,4 @@
-import { type ServiceClassWithoutClient, type ServiceClassWithoutClientMethods } from '@chia-network/api';
+import { type ServiceClassWithoutClient, type ServiceClassWithoutClientMethods } from '@cryptomines/api';
 
 import { baseQuery } from '../api';
 

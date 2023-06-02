@@ -1,5 +1,5 @@
-import { useGetTimestampForHeightQuery, useRevokeVCMutation } from '@chia-network/api-react';
-import { Truncate, Button, useOpenDialog, ConfirmDialog, AlertDialog, Flex } from '@chia-network/core';
+import { useGetTimestampForHeightQuery, useRevokeVCMutation } from '@cryptomines/api-react';
+import { Truncate, Button, useOpenDialog, ConfirmDialog, AlertDialog, Flex } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import { Box, Card, Typography, Table, TableRow, TableCell } from '@mui/material';
 import { useTheme } from '@mui/material/styles';

@@ -1,6 +1,6 @@
-import type { Wallet } from '@chia-network/api';
-import { WalletType } from '@chia-network/api';
-import { mojoToCATLocaleString, mojoToChiaLocaleString, useLocale } from '@chia-network/core';
+import type { Wallet } from '@cryptomines/api';
+import { WalletType } from '@cryptomines/api';
+import { mojoToCATLocaleString, mojoToChiaLocaleString, useLocale } from '@cryptomines/core';
 import BigNumber from 'bignumber.js';
 import { useMemo } from 'react';
 

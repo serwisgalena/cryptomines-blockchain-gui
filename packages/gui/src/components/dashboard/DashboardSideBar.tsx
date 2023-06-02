@@ -1,5 +1,5 @@
-import { useLocalStorage } from '@chia-network/api-react';
-import { Flex, SideBarItem } from '@chia-network/core';
+import { useLocalStorage } from '@cryptomines/api-react';
+import { Flex, SideBarItem } from '@cryptomines/core';
 import {
   Farming as FarmingIcon,
   FullNode as FullNodeIcon,
@@ -10,7 +10,7 @@ import {
   Tokens as TokensIcon,
   Settings as SettingsIcon,
   VC as VCIcon,
-} from '@chia-network/icons';
+} from '@cryptomines/icons';
 import { Trans } from '@lingui/macro';
 import { Box } from '@mui/material';
 import React from 'react';

@@ -1,5 +1,5 @@
-import { useLocalStorage } from '@chia-network/api-react';
-import { Flex, SettingsLabel } from '@chia-network/core';
+import { useLocalStorage } from '@cryptomines/api-react';
+import { Flex, SettingsLabel } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import { FormGroup, FormControlLabel, Grid, Switch } from '@mui/material';
 import React from 'react';

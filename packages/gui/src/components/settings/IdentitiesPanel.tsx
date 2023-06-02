@@ -1,6 +1,6 @@
-import { WalletType } from '@chia-network/api';
-import { useGetDIDQuery, useGetWalletsQuery } from '@chia-network/api-react';
-import { CardListItem, Flex, Truncate } from '@chia-network/core';
+import { WalletType } from '@cryptomines/api';
+import { useGetDIDQuery, useGetWalletsQuery } from '@cryptomines/api-react';
+import { CardListItem, Flex, Truncate } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import { Add } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';

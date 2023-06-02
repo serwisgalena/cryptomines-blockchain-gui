@@ -1,10 +1,10 @@
-import { WalletType, TransactionType, toBech32m } from '@chia-network/api';
-import type { Transaction } from '@chia-network/api';
+import { WalletType, TransactionType, toBech32m } from '@cryptomines/api';
+import type { Transaction } from '@cryptomines/api';
 import {
   useGetOfferRecordMutation,
   useGetSyncStatusQuery,
   useGetTransactionMemoMutation,
-} from '@chia-network/api-react';
+} from '@cryptomines/api-react';
 import {
   Card,
   CopyToClipboard,
@@ -17,8 +17,8 @@ import {
   mojoToCAT,
   FormatLargeNumber,
   truncateValue,
-} from '@chia-network/core';
-import type { Row } from '@chia-network/core';
+} from '@cryptomines/core';
+import type { Row } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import {
   CallReceived as CallReceivedIcon,

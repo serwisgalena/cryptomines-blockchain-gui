@@ -1,5 +1,5 @@
-import { useGetFarmedAmountQuery } from '@chia-network/api-react';
-import { useCurrencyCode, mojoToChiaLocaleString, CardSimple, useLocale } from '@chia-network/core';
+import { useGetFarmedAmountQuery } from '@cryptomines/api-react';
+import { useCurrencyCode, mojoToChiaLocaleString, CardSimple, useLocale } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import React, { useMemo } from 'react';
 
@@ -24,6 +24,6 @@ export default function FarmCardTotalChiaFarmed() {
   }, [farmedAmount, locale, currencyCode]);
 
   return (
-    <CardSimple title={<Trans>Total Chia Farmed</Trans>} value={totalChiaFarmed} loading={isLoading} error={error} />
+    <CardSimple title={<Trans>Total Cryptomines Farmed</Trans>} value={totalChiaFarmed} loading={isLoading} error={error} />
   );
 }

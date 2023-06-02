@@ -1,5 +1,5 @@
-import { Flex } from '@chia-network/core';
-import { Offering, Requesting } from '@chia-network/icons';
+import { Flex } from '@cryptomines/core';
+import { Offering, Requesting } from '@cryptomines/icons';
 import { Trans } from '@lingui/macro';
 import React from 'react';
 import { useWatch } from 'react-hook-form';
@@ -65,7 +65,7 @@ export default function OfferBuilderTradeColumn(props: OfferBuilderTradeColumnPr
   const { readOnly } = useOfferBuilderContext();
 
   const xch = useWatch({
-    name: `${name}.xch`,
+    name: `${name}.kop`,
   });
 
   const nfts = useWatch({
@@ -104,7 +104,7 @@ export default function OfferBuilderTradeColumn(props: OfferBuilderTradeColumnPr
           padding: 1,
         }}
       >
-        {showXCH && <OfferBuilderXCHSection name={`${name}.xch`} offering={offering} muted={mutedXCH} />}
+        {showXCH && <OfferBuilderXCHSection name={`${name}.kop`} offering={offering} muted={mutedXCH} />}
 
         {showTokensSection && (
           <OfferBuilderTokensSection name={`${name}.tokens`} offering={offering} muted={mutedTokens} />

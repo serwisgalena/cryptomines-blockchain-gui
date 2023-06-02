@@ -1,4 +1,4 @@
-import { Loading, State, StateIndicator } from '@chia-network/core';
+import { Loading, State, StateIndicator } from '@cryptomines/core';
 import React from 'react';
 
 import FullNodeState from '../../constants/FullNodeState';

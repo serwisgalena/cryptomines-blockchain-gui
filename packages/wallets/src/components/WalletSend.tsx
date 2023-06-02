@@ -1,4 +1,4 @@
-import { useGetSyncStatusQuery, useSendTransactionMutation, useFarmBlockMutation } from '@chia-network/api-react';
+import { useGetSyncStatusQuery, useSendTransactionMutation, useFarmBlockMutation } from '@cryptomines/api-react';
 import {
   AdvancedOptions,
   Amount,
@@ -14,7 +14,7 @@ import {
   getTransactionResult,
   useIsSimulator,
   TooltipIcon,
-} from '@chia-network/core';
+} from '@cryptomines/core';
 import { Trans, t } from '@lingui/macro';
 import { Button, Grid, Typography } from '@mui/material';
 import React from 'react';
@@ -104,10 +104,10 @@ export default function WalletSend(props: SendCardProps) {
 
     let { address } = data;
     if (address.includes('colour')) {
-      throw new Error(t`Cannot send chia to coloured address. Please enter a chia address.`);
+      throw new Error(t`Cannot send cryptomines to coloured address. Please enter a cryptomines address.`);
     }
 
-    if (address.slice(0, 12) === 'chia_addr://') {
+    if (address.slice(0, 12) === 'cryptomines_addr://') {
       address = address.slice(12);
     }
     if (address.startsWith('0x') || address.startsWith('0X')) {

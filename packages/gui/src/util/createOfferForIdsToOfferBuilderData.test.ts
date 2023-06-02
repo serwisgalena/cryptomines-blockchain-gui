@@ -1,10 +1,10 @@
-import * as chiaCore from '@chia-network/core';
+import * as chiaCore from '@cryptomines/core';
 import BigNumber from 'bignumber.js';
 
 import { AssetIdMapEntry } from '../hooks/useAssetIdName';
 import createOfferForIdsToOfferBuilderData from './createOfferForIdsToOfferBuilderData';
 
-jest.mock('@chia-network/core', () => ({
+jest.mock('@cryptomines/core', () => ({
   mojoToChia: jest.fn(),
   mojoToCAT: jest.fn(),
 }));
@@ -14,7 +14,7 @@ describe('createOfferForIdsToOfferBuilderData', () => {
     jest.clearAllMocks();
   });
 
-  describe('when offering XCH for CAT', () => {
+  describe('when offering KOP for CAT', () => {
     it('should return a valid offer builder data object', () => {
       const calledLookupByWalletIdWithIds: string[] = [];
       const assetIdMapEntriesByWalletId: Record<string, AssetIdMapEntry> = {
@@ -22,10 +22,10 @@ describe('createOfferForIdsToOfferBuilderData', () => {
           walletId: 1,
           walletType: 0, // STANDARD_WALLET
           isVerified: true,
-          name: 'Chia',
-          symbol: 'XCH',
-          displayName: 'XCH',
-          assetId: 'xch',
+          name: 'Cryptomines',
+          symbol: 'KOP',
+          displayName: 'KOP',
+          assetId: 'kop',
         },
         2: {
           walletId: 2,
@@ -48,7 +48,7 @@ describe('createOfferForIdsToOfferBuilderData', () => {
         2: 600_000,
       };
 
-      jest.mock('@chia-network/core', () => ({
+      jest.mock('@cryptomines/core', () => ({
         mojoToChia: jest.fn(),
         mojoToCAT: jest.fn(),
       }));
@@ -62,13 +62,13 @@ describe('createOfferForIdsToOfferBuilderData', () => {
 
       expect(result).toEqual({
         offered: {
-          xch: [{ amount: '111.555' }],
+          kop: [{ amount: '111.555' }],
           tokens: [],
           nfts: [],
           fee: [],
         },
         requested: {
-          xch: [],
+          kop: [],
           tokens: [{ amount: '600', assetId: 'f17f88130c63522821f1a75466849354eee69c414c774bd9f3873ab643e9574d' }],
           nfts: [],
           fee: [],
@@ -77,7 +77,7 @@ describe('createOfferForIdsToOfferBuilderData', () => {
     });
   });
 
-  describe('when offering a CAT for XCH', () => {
+  describe('when offering a CAT for KOP', () => {
     it('should return a valid offer builder data object', () => {
       const calledLookupByWalletIdWithIds: string[] = [];
       const assetIdMapEntriesByWalletId: Record<string, AssetIdMapEntry> = {
@@ -85,10 +85,10 @@ describe('createOfferForIdsToOfferBuilderData', () => {
           walletId: 1,
           walletType: 0, // STANDARD_WALLET
           isVerified: true,
-          name: 'Chia',
-          symbol: 'XCH',
-          displayName: 'XCH',
-          assetId: 'xch',
+          name: 'Cryptomines',
+          symbol: 'KOP',
+          displayName: 'KOP',
+          assetId: 'kop',
         },
         2: {
           walletId: 2,
@@ -120,7 +120,7 @@ describe('createOfferForIdsToOfferBuilderData', () => {
 
       expect(result).toEqual({
         offered: {
-          xch: [],
+          kop: [],
           tokens: [
             {
               amount: '1.234',
@@ -131,7 +131,7 @@ describe('createOfferForIdsToOfferBuilderData', () => {
           fee: [],
         },
         requested: {
-          xch: [
+          kop: [
             {
               amount: '2',
             },
@@ -143,7 +143,7 @@ describe('createOfferForIdsToOfferBuilderData', () => {
       });
     });
   });
-  describe('when offering XCH for an NFT', () => {
+  describe('when offering KOP for an NFT', () => {
     it('should return a valid offer builder data object', () => {
       const calledLookupByWalletIdWithIds: string[] = [];
       const assetIdMapEntriesByWalletId: Record<string, AssetIdMapEntry> = {
@@ -151,10 +151,10 @@ describe('createOfferForIdsToOfferBuilderData', () => {
           walletId: 1,
           walletType: 0, // STANDARD_WALLET
           isVerified: true,
-          name: 'Chia',
-          symbol: 'XCH',
-          displayName: 'XCH',
-          assetId: 'xch',
+          name: 'Cryptomines',
+          symbol: 'KOP',
+          displayName: 'KOP',
+          assetId: 'kop',
         },
       };
 
@@ -179,13 +179,13 @@ describe('createOfferForIdsToOfferBuilderData', () => {
 
       expect(result).toEqual({
         offered: {
-          xch: [{ amount: '3' }],
+          kop: [{ amount: '3' }],
           tokens: [],
           nfts: [],
           fee: [],
         },
         requested: {
-          xch: [],
+          kop: [],
           tokens: [],
           nfts: [
             {
@@ -218,10 +218,10 @@ describe('createOfferForIdsToOfferBuilderData', () => {
           walletId: 1,
           walletType: 0, // STANDARD_WALLET
           isVerified: true,
-          name: 'Chia',
-          symbol: 'XCH',
-          displayName: 'XCH',
-          assetId: 'xch',
+          name: 'Cryptomines',
+          symbol: 'KOP',
+          displayName: 'KOP',
+          assetId: 'kop',
         },
         2: {
           walletId: 2,
@@ -252,13 +252,13 @@ describe('createOfferForIdsToOfferBuilderData', () => {
 
       expect(result).toEqual({
         offered: {
-          xch: [],
+          kop: [],
           tokens: [],
           nfts: [],
           fee: [],
         },
         requested: {
-          xch: [
+          kop: [
             {
               amount: '0.5',
             },
@@ -299,13 +299,13 @@ describe('createOfferForIdsToOfferBuilderData', () => {
 
       expect(result).toEqual({
         offered: {
-          xch: [],
+          kop: [],
           tokens: [],
           nfts: [],
           fee: [],
         },
         requested: {
-          xch: [],
+          kop: [],
           tokens: [],
           nfts: [],
           fee: [],

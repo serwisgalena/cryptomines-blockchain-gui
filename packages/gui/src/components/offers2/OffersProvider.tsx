@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 
-import { useGetOfferSummaryMutation, useCheckOfferValidityMutation } from '@chia-network/api-react';
+import { useGetOfferSummaryMutation, useCheckOfferValidityMutation } from '@cryptomines/api-react';
 import debug from 'debug';
 import React, { useState, createContext, useMemo, useCallback, type ReactNode } from 'react';
 import isURL from 'validator/lib/isURL';
@@ -23,7 +23,7 @@ export const OffersContext = createContext<
   | undefined
 >(undefined);
 
-const log = debug('chia-gui:OfferProvider');
+const log = debug('cryptomines-gui:OfferProvider');
 
 export function getChangedEventName(id: string) {
   return `offerChanged:${id}`;

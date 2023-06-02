@@ -1,5 +1,5 @@
-import { ServiceName } from '@chia-network/api';
-import { MojoToChia } from '@chia-network/core';
+import { ServiceName } from '@cryptomines/api';
+import { MojoToChia } from '@cryptomines/core';
 import { Trans } from '@lingui/macro';
 import React from 'react';
 
