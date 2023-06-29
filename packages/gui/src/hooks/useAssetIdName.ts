@@ -40,7 +40,7 @@ export default function useAssetIdName() {
 
       if (walletType === WalletType.STANDARD_WALLET) {
         assetId = 'kop';
-        name = 'Chia';
+        name = 'Cryptomines';
         symbol = currencyCode;
         isVerified = true;
       } else if (walletType === WalletType.CAT) {

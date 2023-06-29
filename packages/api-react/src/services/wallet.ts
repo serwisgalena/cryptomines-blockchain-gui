@@ -38,6 +38,7 @@ const tagTypes = [
   'CATs',
   'DaemonKey',
   'Notification',
+  'AutoClaim',
 ];
 
 const apiWithTag = api.enhanceEndpoints({
@@ -166,6 +167,10 @@ export const walletApi = apiWithTag.injectEndpoints({
       ]),
     }),
 
+    getTransactionAsync: mutation(build, WalletService, 'getTransaction', {
+      transformResponse: (response) => response.transaction,
+    }),
+
     getTransactionMemo: mutation(build, WalletService, 'getTransactionMemo', {
       transformResponse: (response) => {
         const id = Object.keys(response)[0];
@@ -260,6 +265,8 @@ export const walletApi = apiWithTag.injectEndpoints({
         },
       ]),
     }),
+
+    getWalletBalances: query(build, WalletService, 'getWalletBalances', {}),
 
     getFarmedAmount: query(build, WalletService, 'getFarmedAmount', {
       onCacheEntryAdded: onCacheEntryAddedInvalidate(baseQuery, api, [
@@ -1409,7 +1416,20 @@ export const walletApi = apiWithTag.injectEndpoints({
       transformResponse: (response) => response.vcRecord,
     }),
 
-    getVCList: query(build, VC, 'getVCList'),
+    getVCList: query(build, VC, 'getVCList', {
+      onCacheEntryAdded: onCacheEntryAddedInvalidate(baseQuery, api, [
+        {
+          command: 'onVCCoinAdded',
+          service: VC,
+          endpoint: 'getVCList',
+        },
+        {
+          command: 'onVCCoinRemoved',
+          service: VC,
+          endpoint: 'getVCList',
+        },
+      ]),
+    }),
 
     spendVC: mutation(build, VC, 'spendVC'),
 
@@ -1418,6 +1438,15 @@ export const walletApi = apiWithTag.injectEndpoints({
     getProofsForRoot: query(build, VC, 'getProofsForRoot'),
 
     revokeVC: mutation(build, VC, 'revokeVC'),
+    // clawback
+    setAutoClaim: mutation(build, WalletService, 'setAutoClaim', {
+      invalidatesTags: [{ type: 'AutoClaim' }],
+    }),
+    getAutoClaim: query(build, WalletService, 'getAutoClaim', {
+      providesTags: (result) => (result ? [{ type: 'AutoClaim' }] : []),
+    }),
+
+    spendClawbackCoins: mutation(build, WalletService, 'spendClawbackCoins'),
   }),
 });
 
@@ -1426,6 +1455,7 @@ export const {
   useGetLoggedInFingerprintQuery,
   useGetWalletsQuery,
   useGetTransactionQuery,
+  useGetTransactionAsyncMutation,
   useGetTransactionMemoMutation,
   useGetPwStatusQuery,
   usePwAbsorbRewardsMutation,
@@ -1434,6 +1464,7 @@ export const {
   useCreateNewWalletMutation,
   useDeleteUnconfirmedTransactionsMutation,
   useGetWalletBalanceQuery,
+  useGetWalletBalancesQuery,
   useGetFarmedAmountQuery,
   useSendTransactionMutation,
   useGenerateMnemonicMutation,
@@ -1531,5 +1562,10 @@ export const {
   useSpendVCMutation,
   useAddVCProofsMutation,
   useGetProofsForRootQuery,
+  useLazyGetProofsForRootQuery,
   useRevokeVCMutation,
+  // clawback
+  useSetAutoClaimMutation,
+  useGetAutoClaimQuery,
+  useSpendClawbackCoinsMutation,
 } = walletApi;

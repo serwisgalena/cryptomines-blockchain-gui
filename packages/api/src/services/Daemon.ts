@@ -1,4 +1,5 @@
 import KeyData from '../@types/KeyData';
+import KeyringStatus from '../@types/KeyringStatus';
 import PlotQueueItem from '../@types/PlotQueueItem';
 import { PlottersApi } from '../@types/Plotter';
 import type Client from '../Client';
@@ -70,21 +71,16 @@ export default class Daemon extends Service {
   }
 
   keyringStatus() {
-    return this.command('keyring_status');
+    return this.command<KeyringStatus>('keyring_status');
   }
 
-  setKeyringPassphrase(
-    currentPassphrase?: string | null,
-    newPassphrase?: string,
-    passphraseHint?: string,
-    savePassphrase?: boolean
-  ) {
-    return this.command('set_keyring_passphrase', {
-      currentPassphrase,
-      newPassphrase,
-      passphraseHint,
-      savePassphrase,
-    });
+  setKeyringPassphrase(args: {
+    currentPassphrase?: string | null;
+    newPassphrase?: string;
+    passphraseHint?: string;
+    savePassphrase?: boolean;
+  }) {
+    return this.command<void>('set_keyring_passphrase', args);
   }
 
   removeKeyringPassphrase(args: { currentPassphrase: string }) {
